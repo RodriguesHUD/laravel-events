@@ -40,6 +40,7 @@ class EventController extends Controller
         $event->private = $request->private;
         $event->description = $request->description;
         $event->items = $request->items;
+        $event->user_id = auth()->id(); // Associando o usuário logado
         
         //imagem upload
         if($request->hasFile('image') && $request->file('image')->isValid()) {
@@ -68,9 +69,7 @@ class EventController extends Controller
             return "A view 'events.show' não foi encontrada.";
         }
         $event = Event::findOrFail($id);
-
-        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
-
+        $eventOwner = $event->user; 
 
         return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
     }

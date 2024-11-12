@@ -23,12 +23,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $event = Event::first();
-        $eventOwner = $event ? User::find($event->user_id) : null;
+        // $event = Event::first();
+        // $eventOwner = $event ? User::find($event->user_id) : null;
 
-        View::share('eventOwner', $eventOwner);
+        // View::share('eventOwner', $eventOwner);
+        // View::composer('*', function ($view) {
+        //     $view->with('eventOwner', Auth::user());
+        // });
+
         View::composer('*', function ($view) {
-            $view->with('eventOwner', Auth::user());
+            $eventOwner = null;
+            $authenticatedUser = Auth::user();
+            $view->with('authenticatedUser', $authenticatedUser);
+            
         });
     }
 }

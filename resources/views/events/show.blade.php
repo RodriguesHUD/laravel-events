@@ -40,7 +40,11 @@
                 <span>Data do evento: {{date('d/m/Y', strtotime($event->date))}}</span>
                 <p class="event-city">Local: {{$event->location}}</p>
                 <p class="events-participants">participantes: {{ count($event->users)}}</p>
-                <p class="event-owner" name="star-outline">Criador do evento: {{ $eventOwner['name'] }}</p>
+                @if(!empty($eventOwner) && isset($eventOwner->name))
+                    <p class="event-owner" name="star-outline">Criador do evento: {{ $eventOwner->name }}</p>
+                @else
+                    <p class="event-owner" name="star-outline">Criador do evento: Informação indisponível</p>
+                @endif
                 
                 </div>
             </div>

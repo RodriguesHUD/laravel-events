@@ -267,6 +267,7 @@ option {
 .img-fluid {
     max-width: 760px !important;
     width: 100%;
+    border-radius: 8px;
 }
 
 footer {

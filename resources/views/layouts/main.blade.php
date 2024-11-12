@@ -20,8 +20,8 @@
                 <nav>
                     <ul class="header">
                         <div class="user-name">
-                            @if(isset($eventOwner))
-                                <p><ion-icon name="person-circle-outline"></ion-icon>{{ $eventOwner->name }}</p>
+                            @if(Auth::check())
+                                <p><ion-icon name="person-circle-outline"></ion-icon>{{ Auth::user()->name }}</p>
                             @endif
                         </div>
                             <li>
