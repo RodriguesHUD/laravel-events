@@ -27,7 +27,7 @@
             <tr>
                 <td scope="row">{{$loop->index + 1}}</td>
                 <td><a href="/events/{{ $event->id}}">{{$event->name}}</a></td>
-                <td>+100</td>
+                <td>{{ count($event->users)}}</td>
                 <td>
                     <a href="/events/edit/{{$event->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
                     <form action="/events/{{ $event->id }}" method="POST">
