@@ -124,9 +124,20 @@ option {
 .events-title {
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 2rem;
     padding: 0 8px;
+}
+
+@media only screen and (max-width: 425px) {
+    .events-title {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 }
 
 .events-title-text {
