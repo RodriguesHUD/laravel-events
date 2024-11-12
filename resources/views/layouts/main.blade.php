@@ -19,6 +19,11 @@
             <header>
                 <nav>
                     <ul class="header">
+                        <div class="user-name">
+                            @if(isset($eventOwner))
+                                <p><ion-icon name="person-circle-outline"></ion-icon>{{ $eventOwner->name }}</p>
+                            @endif
+                        </div>
                             <li>
                                 <a href="/">Home</a> 
                             </li>

@@ -103,6 +103,7 @@ option {
 
 .header {
     display: flex;
+    position: relative;
     gap: 1rem;
     height: 60px;
     padding: 0;
@@ -110,6 +111,17 @@ option {
     justify-content: center;
     border-bottom: 1px solid #ffffff63;
     margin-bottom: 3rem;
+}
+
+.user-name {
+    position: absolute;
+    right: 0px;
+    cursor: default;
+}
+.user-name p {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .header a {
@@ -179,7 +191,6 @@ option {
 
 .about-more-btn:hover {
     background: #210044;
-    border: 1px solid #ffffff79;
 }
 
 .container-top {
