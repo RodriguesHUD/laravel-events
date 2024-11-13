@@ -53,7 +53,19 @@
             </header>
 
 
-            @yield('content')
+            <main>
+                <div class="container-fluid">
+                        @if(session('msg'))
+                        <div class="msg-card" id="flash-message">
+                            <p class="msg">{{session('msg')}}</p>
+                        </div>
+                        <script>
+                            setTimeout(() => document.getElementById('flash-message').style.display = 'none', 4000);
+                        </script>
+                        @endif
+                        @yield('content')
+                </div>
+            </main>
 
 
             <footer>HD Events &copy; 2024</footer>
